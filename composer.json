@@ -16,7 +16,16 @@
 	"require-dev": {
 		"consistence/coding-standard": "0.6",
 		"jakub-onderka/php-console-highlighter": "0.3.1",
-		"jakub-onderka/php-parallel-lint": "0.7"
+		"jakub-onderka/php-parallel-lint": "0.7",
+		"phpunit/phpunit": "4.6.9"
+	},
+	"autoload": {
+		"psr-4": { "VasekPurchart\\Doctrine\\Type\\DateTimeImmutable\\": [ "src" ] },
+		"classmap": [ "src" ]
+	},
+	"autoload-dev": {
+		"psr-4": { "VasekPurchart\\Doctrine\\Type\\DateTimeImmutable\\": [ "tests" ] },
+		"classmap": [ "tests" ]
 	},
 	"config": {
 		"bin-dir": "bin"
