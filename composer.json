@@ -1,0 +1,13 @@
+{
+	"name": "vasek-purchart/doctrine-date-time-immutable-types",
+	"description": "Doctrine DateTimeImmutable types",
+	"keywords": ["doctrine", "type", "datetime", "immutable", "datetimeimmutable", "dbal"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Vašek Purchart",
+			"email": "me@vasekpurchart.cz",
+			"homepage": "http://vasekpurchart.cz"
+		}
+	]
+}
