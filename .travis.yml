@@ -20,3 +20,8 @@ install:
 
 script:
   - bin/phing ci-build
+
+after_success:
+  - composer require symfony/yaml 2.6 --no-interaction satooshi/php-coveralls dev-master#2fbf803 --prefer-source --no-progress --ignore-platform-reqs
+    && bin/coveralls --verbose --config build/coveralls.yml
+    || true
