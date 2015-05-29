@@ -11,7 +11,8 @@
 		}
 	],
 	"require": {
-		"php": "~5.5"
+		"php": "~5.5",
+		"doctrine/dbal": "~2.4"
 	},
 	"require-dev": {
 		"consistence/coding-standard": "0.6",
