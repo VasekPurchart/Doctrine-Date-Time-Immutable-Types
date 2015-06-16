@@ -16,10 +16,10 @@
 	},
 	"require-dev": {
 		"consistence/coding-standard": "0.6",
-		"jakub-onderka/php-console-highlighter": "0.3.1",
-		"jakub-onderka/php-parallel-lint": "0.7",
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"jakub-onderka/php-parallel-lint": "0.9",
 		"phing/phing": "2.11.0",
-		"phpunit/phpunit": "4.6.9"
+		"phpunit/phpunit": "4.7.3"
 	},
 	"autoload": {
 		"psr-4": { "VasekPurchart\\Doctrine\\Type\\DateTimeImmutable\\": [ "src" ] },
