@@ -21,6 +21,8 @@ You can prevent this behaviour by returning a new instance (cloning) or using [`
 Installation
 ------------
 
+> If you are using Symfony, you can use [`vasek-purchart/doctrine-date-time-immutable-types-bundle`](https://github.com/VasekPurchart/Doctrine-Date-Time-Immutable-Types-Bundle), which will take care of the integration.
+
 Install package [`vasek-purchart/doctrine-date-time-immutable-types`](https://packagist.org/packages/vasek-purchart/doctrine-date-time-immutable-types) with [Composer](https://getcomposer.org/):
 
 ```
