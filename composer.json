@@ -19,7 +19,7 @@
 		"jakub-onderka/php-console-highlighter": "0.3.2",
 		"jakub-onderka/php-parallel-lint": "0.9",
 		"phing/phing": "2.11.0",
-		"phpunit/phpunit": "4.7.3"
+		"phpunit/phpunit": "4.7.5"
 	},
 	"autoload": {
 		"psr-4": { "VasekPurchart\\Doctrine\\Type\\DateTimeImmutable\\": [ "src" ] },
