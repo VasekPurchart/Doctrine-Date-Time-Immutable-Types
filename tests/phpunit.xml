@@ -12,7 +12,7 @@
 	<logging>
 		<log
 			type="coverage-html"
-			target="../build/log"
+			target="../build/log/coverage/html"
 			charset="UTF-8"
 			lowUpperBound="0.0000000000001"
 			highLowerBound="99.999999999999"
