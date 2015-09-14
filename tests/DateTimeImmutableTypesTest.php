@@ -93,4 +93,15 @@ class DateTimeImmutableTypesTest extends \PHPUnit_Framework_TestCase
 		$this->assertSame($typeClass::NAME, DoctrineType::getType($typeClass::NAME)->getName());
 	}
 
+	/**
+	 * @dataProvider typesProvider
+	 *
+	 * @param \Doctrine\DBAL\Types\Type $type
+	 */
+	public function testRequiresSqlCommentHint(DoctrineType $type)
+	{
+		$platform = $this->getMockForAbstractClass(AbstractPlatform::class);
+		$this->assertTrue($type->requiresSQLCommentHint($platform));
+	}
+
 }

@@ -38,4 +38,13 @@ class DateTimeTzImmutableType extends \Doctrine\DBAL\Types\DateTimeTzType
 		return $dateTime;
 	}
 
+	/**
+	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
+	 * @return boolean
+	 */
+	public function requiresSQLCommentHint(AbstractPlatform $platform)
+	{
+		return true;
+	}
+
 }

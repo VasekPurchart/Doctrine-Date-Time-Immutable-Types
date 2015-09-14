@@ -38,4 +38,13 @@ class TimeImmutableType extends \Doctrine\DBAL\Types\TimeType
 		return $dateTime;
 	}
 
+	/**
+	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
+	 * @return boolean
+	 */
+	public function requiresSQLCommentHint(AbstractPlatform $platform)
+	{
+		return true;
+	}
+
 }
