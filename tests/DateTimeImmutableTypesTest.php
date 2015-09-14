@@ -10,6 +10,9 @@ use Doctrine\DBAL\Types\Type as DoctrineType;
 class DateTimeImmutableTypesTest extends \PHPUnit_Framework_TestCase
 {
 
+	/**
+	 * @return string[][]
+	 */
 	public function typeClassesProvider()
 	{
 		return [
@@ -20,6 +23,9 @@ class DateTimeImmutableTypesTest extends \PHPUnit_Framework_TestCase
 		];
 	}
 
+	/**
+	 * @return \Doctrine\DBAL\Types\Type[][]
+	 */
 	public function typesProvider()
 	{
 		return array_map(function ($typeClassRow) {
