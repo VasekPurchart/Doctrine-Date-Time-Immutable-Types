@@ -11,11 +11,11 @@
 		}
 	],
 	"require": {
-		"php": "~5.5",
+		"php": "~5.5|~7.0",
 		"doctrine/dbal": "~2.4"
 	},
 	"require-dev": {
-		"consistence/coding-standard": "0.6",
+		"consistence/coding-standard": "0.8",
 		"jakub-onderka/php-console-highlighter": "0.3.2",
 		"jakub-onderka/php-parallel-lint": "0.9",
 		"phing/phing": "2.11.0",
