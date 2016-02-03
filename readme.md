@@ -3,17 +3,26 @@ Doctrine DBAL DateTimeImmutable Types
 
 ### Why do I want to use this?
 
-All Doctrine date/time based types are using `DateTime` instances, which are mutable. This can lead very easily to breaking encapsulation and therefore bugs:
+All Doctrine date/time based types are using `DateTime` instances, which are mutable. This can lead very easily to breaking encapsulation and therefore bugs. For two reasons:
 
+You accidentally modify a date when you are doing some computation on it:
 ```php
 <?php
-
 // created date might be modified
 // even if it is not "supposed to" by the intentions of the creator
 // (there is no set/modify method on the entity)
 var_dump($logRow->getCreatedDate()); // 2015-01-01 00:00:00
 $logRow->getCreatedDate()->modify('+14 days');
 var_dump($logRow->getCreatedDate()); // 2015-01-15 00:00:00
+```
+
+Or you *do* intentionally try to update it, which fails because Doctrine will not see this:
+```php
+<?php
+// Moficiations to date are not picked up by Doctrine 
+$product->getRenewDate()->add(new \DateInterval('P1Y'));
+$entityManager->persist($product);
+$entityManager->flush();
 ```
 
 You can prevent this behaviour by returning a new instance (cloning) or using [`DateTimeImmutable`](http://php.net/manual/en/class.datetimeimmutable.php) (which returns a new instance when modified). `DateTimeImmutable` is available since PHP 5.5, but Doctrine has not adopted it yet, because it would introduce a [BC break](http://www.doctrine-project.org/jira/browse/DBAL-662). Maybe it will be supported in Doctrine 3.0, but until then you might want to use this package.
