@@ -20,7 +20,7 @@ Or you *do* intentionally try to update it, which fails because Doctrine will no
 ```php
 <?php
 // Modifications to date are not picked up by Doctrine 
-$product->getRenewDate()->add(new \DateInterval('P1Y'));
+$product->getRenewDate()->modify('+1 year);
 $entityManager->persist($product);
 $entityManager->flush();
 ```
