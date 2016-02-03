@@ -19,7 +19,7 @@ var_dump($logRow->getCreatedDate()); // 2015-01-15 00:00:00
 Or you *do* intentionally try to update it, which fails because Doctrine will not see this:
 ```php
 <?php
-// Moficiations to date are not picked up by Doctrine 
+// Modifications to date are not picked up by Doctrine 
 $product->getRenewDate()->add(new \DateInterval('P1Y'));
 $entityManager->persist($product);
 $entityManager->flush();
