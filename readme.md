@@ -22,7 +22,7 @@ Or you *do* intentionally try to update it, which fails because Doctrine will no
 // Modifications to date are not picked up by Doctrine 
 $product->getRenewDate()->modify('+1 year);
 $entityManager->persist($product);
-$entityManager->flush();
+$entityManager->flush(); // No updates will be fired because Doctrine could not detect change!
 ```
 
 You can prevent this behaviour by returning a new instance (cloning) or using [`DateTimeImmutable`](http://php.net/manual/en/class.datetimeimmutable.php) (which returns a new instance when modified). `DateTimeImmutable` is available since PHP 5.5, but Doctrine has not adopted it yet, because it would introduce a [BC break](http://www.doctrine-project.org/jira/browse/DBAL-662). Maybe it will be supported in Doctrine 3.0, but until then you might want to use this package.
