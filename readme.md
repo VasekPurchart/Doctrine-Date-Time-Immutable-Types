@@ -21,7 +21,7 @@ var_dump($logRow->getCreatedDate()); // 2015-01-15 00:00:00
 ```php
 <?php
 
-$product->getRenewDate()->modify('+1 year);
+$product->getRenewDate()->modify('+1 year');
 $entityManager->persist($product);
 $entityManager->flush(); // no updates will be fired because Doctrine could not detect change (objects are compared by identity)
 ```
