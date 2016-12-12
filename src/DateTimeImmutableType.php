@@ -3,6 +3,7 @@
 namespace VasekPurchart\Doctrine\Type\DateTimeImmutable;
 
 use DateTimeImmutable;
+use DateTimeInterface;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
@@ -41,6 +42,28 @@ class DateTimeImmutableType extends \Doctrine\DBAL\Types\DateTimeType
 		}
 
 		return $dateTime;
+	}
+
+	/**
+	 * @param \DateTimeInterface|null $value
+	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
+	 * @return string
+	 */
+	public function convertToDatabaseValue($value, AbstractPlatform $platform)
+	{
+		if ($value === null) {
+			return $value;
+		}
+
+		if ($value instanceof DateTimeInterface) {
+			return $value->format($platform->getDateTimeFormatString());
+		}
+
+		if (!is_scalar($value)) {
+			$value = sprintf('of type %s', gettype($value));
+		}
+
+		throw \Doctrine\DBAL\Types\ConversionException::conversionFailed($value, $this->getName());
 	}
 
 	/**
