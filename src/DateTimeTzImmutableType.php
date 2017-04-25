@@ -42,7 +42,7 @@ class DateTimeTzImmutableType extends \Doctrine\DBAL\Types\DateTimeTzType
 	/**
 	 * @param \DateTimeInterface|null $value
 	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
-	 * @return string
+	 * @return string|null
 	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform)
 	{

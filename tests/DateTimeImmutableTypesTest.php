@@ -3,10 +3,11 @@
 namespace VasekPurchart\Doctrine\Type\DateTimeImmutable;
 
 use DateTimeImmutable;
-use stdClass;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type as DoctrineType;
+
+use stdClass;
 
 class DateTimeImmutableTypesTest extends \PHPUnit\Framework\TestCase
 {

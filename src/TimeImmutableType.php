@@ -42,7 +42,7 @@ class TimeImmutableType extends \Doctrine\DBAL\Types\TimeType
 	/**
 	 * @param \DateTimeInterface|null $value
 	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
-	 * @return string
+	 * @return string|null
 	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform)
 	{
