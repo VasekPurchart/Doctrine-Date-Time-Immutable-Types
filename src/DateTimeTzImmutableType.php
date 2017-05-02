@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace VasekPurchart\Doctrine\Type\DateTimeImmutable;
 
 use DateTimeImmutable;
@@ -12,10 +14,7 @@ class DateTimeTzImmutableType extends \Doctrine\DBAL\Types\DateTimeTzType
 
 	const NAME = 'datetimetz_immutable';
 
-	/**
-	 * @return string
-	 */
-	public function getName()
+	public function getName(): string
 	{
 		return static::NAME;
 	}
@@ -61,11 +60,7 @@ class DateTimeTzImmutableType extends \Doctrine\DBAL\Types\DateTimeTzType
 		throw \Doctrine\DBAL\Types\ConversionException::conversionFailed($value, $this->getName());
 	}
 
-	/**
-	 * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
-	 * @return boolean
-	 */
-	public function requiresSQLCommentHint(AbstractPlatform $platform)
+	public function requiresSQLCommentHint(AbstractPlatform $platform): bool
 	{
 		return true;
 	}

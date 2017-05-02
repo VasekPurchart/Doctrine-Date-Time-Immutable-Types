@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace VasekPurchart\Doctrine\Type\DateTimeImmutable;
 
 use Doctrine\DBAL\Types\Type;
