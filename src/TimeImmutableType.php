@@ -6,7 +6,6 @@ namespace VasekPurchart\Doctrine\Type\DateTimeImmutable;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 class TimeImmutableType extends \Doctrine\DBAL\Types\TimeType
