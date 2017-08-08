@@ -1,7 +1,9 @@
 Doctrine DBAL DateTimeImmutable Types
 =====================================
 
-### Why would I want to use this?
+> In [Doctrine DBAL 2.6](https://github.com/doctrine/dbal/releases/tag/v2.6.0) immutable DateTime types were added, so if you are using that version or newer, you no longer need this package. If you cannot use that version (it requires PHP 7.1), keep using this package (you can find even PHP 5.6 version in the older versions).
+
+### Why would I want to use immutable types?
 
 All Doctrine date/time based types are using `DateTime` instances, which are mutable. This can lead to breaking encapsulation and therefore bugs. For two reasons:
 
@@ -56,12 +58,12 @@ $entityManager->persist($product);
 $entityManager->flush();
 ```
 
-You can prevent this behaviour by returning a new instance (cloning) or using [`DateTimeImmutable`](http://php.net/manual/en/class.datetimeimmutable.php) (which returns a new instance when modified). `DateTimeImmutable` is available since PHP 5.5, but Doctrine has not adopted it yet, because it would introduce a [BC break](https://github.com/doctrine/dbal/issues/1882). Maybe it will be supported in Doctrine 3.0, but until then you might want to use this package.
+You can prevent this behaviour by returning a new instance (cloning) or using [`DateTimeImmutable`](http://php.net/manual/en/class.datetimeimmutable.php) (which returns a new instance when modified).
 
 Installation
 ------------
 
-> If you are using Symfony, you can use [`vasek-purchart/doctrine-date-time-immutable-types-bundle`](https://github.com/VasekPurchart/Doctrine-Date-Time-Immutable-Types-Bundle), which will take care of the integration.
+> If you are using Symfony, you can use [`vasek-purchart/doctrine-date-time-immutable-types-bundle`](https://github.com/VasekPurchart/Doctrine-Date-Time-Immutable-Types-Bundle/tree/1.0), which will take care of the integration.
 
 Install package [`vasek-purchart/doctrine-date-time-immutable-types`](https://packagist.org/packages/vasek-purchart/doctrine-date-time-immutable-types) with [Composer](https://getcomposer.org/):
 
